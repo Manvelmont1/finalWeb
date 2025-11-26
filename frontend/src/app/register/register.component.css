@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-section.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.form-group input:focus {
+  outline: 2px solid #c4b5fd;
+}
+
+.btn {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+}
+
+.btn-success {
+  background: #10b981;
+}
+
+.btn-primary {
+  background: #7c3aed;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid #e9d5ff;
+}
+
+.footer p {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.alert.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.alert.error {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.8rem;
+}

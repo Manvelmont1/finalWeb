@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="auth-section card">
+    <h1 class="title">🍽️ Reseñas de Restaurantes</h1>
+
+    <h2 class="subtitle">Crear Cuenta Nueva</h2>
+
+    <!-- Alertas -->
+    <div *ngIf="alert.message" class="alert" [ngClass]="alert.type">
+      {{ alert.message }}
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="form" novalidate>
+
+      <div class="form-group">
+        <label>Nombre (opcional)</label>
+        <input formControlName="name" type="text" placeholder="Tu nombre" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" type="email" placeholder="ejemplo@correo.com" />
+
+        <!-- FIX: Angular 17 requiere registerForm.get('email') -->
+        <small class="error"
+               *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          Ingresa un email válido.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input formControlName="password" type="password" placeholder="Mínimo 6 caracteres" />
+        <small class="hint">Usa al menos 6 caracteres para tu contraseña</small>
+
+        <!-- FIX: igual para password -->
+        <small class="error"
+               *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          La contraseña debe tener mínimo 6 caracteres.
+        </small>
+      </div>
+
+      <button class="btn btn-success btn-block" type="submit" [disabled]="registerForm.invalid">
+        Registrarse
+      </button>
+    </form>
+
+    <div class="footer">
+      <p>¿Ya tienes una cuenta?</p>
+      <a routerLink="/" class="btn btn-primary btn-block">Iniciar Sesión</a>
+    </div>
+  </div>
+</div>
