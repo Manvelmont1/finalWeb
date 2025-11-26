@@ -1,0 +1,60 @@
+<div class="container">
+
+  <h2>Reseñas</h2>
+
+  <!-- Array de reseñas -->
+  <div class="review-card" *ngFor="let r of reviews">
+    <h3>{{ r.nombre }}</h3>
+    <p>{{ r.comentario }}</p>
+
+    <div class="stars">
+      <span 
+        *ngFor="let s of stars"
+        class="star"
+        [class.active]="s <= r.calificacion">
+        ★
+      </span>
+    </div>
+
+    <!-- Editar o eliminar reseña -->
+    <div class="actions" *ngIf="r.usuario === currentUser._id">
+      <button class="btn-edit" (click)="editReview(r._id)">Editar</button>
+      <button class="btn-delete" (click)="deleteReview(r._id)">Eliminar</button>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <!-- Añadir nueva reseña -->
+  <h3>Agregar reseña</h3>
+
+  <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+
+    <input 
+      type="text"
+      placeholder="Tu nombre"
+      formControlName="nombre"
+      class="input">
+
+    <textarea 
+      placeholder="Comentario"
+      formControlName="comentario"
+      class="input">
+    </textarea>
+
+    <div class="stars">
+      <span 
+        *ngFor="let s of stars"
+        class="star"
+        [class.active]="s <= reviewForm.get('calificacion')?.value"
+        (click)="setRating(s)">
+        ★
+      </span>
+    </div>
+
+    <button type="submit" class="btn">Enviar</button>
+
+  </form>
+
+</div>
