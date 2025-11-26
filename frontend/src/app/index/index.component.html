@@ -1,0 +1,81 @@
+<p>index works!</p>
+<div class="container">
+  <div class="auth-section card">
+    <h1 class="title">Reseñas de Restaurantes</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        class="tab"
+        [class.active]="activeTab === 'login'"
+        (click)="switchTab('login')"
+      >
+        Iniciar Sesión
+      </button>
+
+      <button
+        class="tab"
+        [class.active]="activeTab === 'register'"
+        (click)="switchTab('register')"
+      >
+        Registrarse
+      </button>
+    </div>
+
+    <!-- Alertas -->
+    <div *ngIf="alert.message" class="alert" [ngClass]="alert.type">
+      {{ alert.message }}
+    </div>
+
+    <!-- LOGIN -->
+    <form
+      *ngIf="activeTab === 'login'"
+      [formGroup]="loginForm"
+      (ngSubmit)="onLogin()"
+      class="form"
+      novalidate
+    >
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="ejemplo@correo.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="••••••••" />
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" [disabled]="loginForm.invalid">
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <!-- REGISTRO -->
+    <form
+      *ngIf="activeTab === 'register'"
+      [formGroup]="registerForm"
+      (ngSubmit)="onRegister()"
+      class="form"
+      novalidate
+    >
+      <div class="form-group">
+        <label>Nombre (opcional)</label>
+        <input formControlName="name" type="text" placeholder="Tu nombre" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="ejemplo@correo.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+      </div>
+
+      <button class="btn btn-success btn-block" type="submit" [disabled]="registerForm.invalid">
+        Registrarse
+      </button>
+    </form>
+  </div>
+</div>
