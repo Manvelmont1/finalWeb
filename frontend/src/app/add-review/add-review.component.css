@@ -1,0 +1,107 @@
+.container {
+  padding: 20px;
+}
+
+.app-section {
+  max-width: 800px;
+  margin: auto;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.actions-header {
+  display: flex;
+  gap: 10px;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  margin: auto;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 150px;
+}
+
+/* Rating */
+.stars-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star {
+  font-size: 28px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.active {
+  color: gold;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Botones */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #7c3aed;
+  color: white;
+  flex: 2;
+}
+
+.btn-secondary {
+  background: #9ca3af;
+  color: white;
+  flex: 1;
+}
+
+.alert {
+  background: #ffe0e0;
+  color: #9b1c1c;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
